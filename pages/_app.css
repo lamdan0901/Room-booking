@@ -1,0 +1,5 @@
+#nprogress .bar {
+  background: rgb(13, 81, 120) !important;
+  padding: 0 8px !important;
+  height: 4px !important;
+}
