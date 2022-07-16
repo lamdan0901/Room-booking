@@ -46,18 +46,19 @@ export default function Home() {
   const [propertiesForRent, setForRent] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const propertyForSale = await fetchApi(
-        `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`
-      );
-      const propertyForRent = await fetchApi(
-        `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`
-      );
+    (async () => {
+      const [propertyForSale, propertyForRent] = await Promise.all([
+        fetchApi(
+          `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`
+        ),
+        fetchApi(
+          `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`
+        ),
+      ]);
 
       setForSale(propertyForSale?.hits);
       setForRent(propertyForRent?.hits);
-    };
-    fetchData();
+    })();
   }, []);
 
   return (
