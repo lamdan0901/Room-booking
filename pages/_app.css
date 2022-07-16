@@ -1,5 +1,34 @@
+html {
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+}
+html::-webkit-scrollbar-track {
+  border-radius: 50px;
+  background: #c9c9c9;
+}
+html::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 50px;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
 #nprogress .bar {
   background: rgb(13, 81, 120) !important;
   padding: 0 8px !important;
   height: 4px !important;
+}
+
+.property-img {
+  transform: scale(1);
+  transition: all 0.1s ease-in;
+}
+
+.property-img:hover {
+  transform: scale(1.05);
 }

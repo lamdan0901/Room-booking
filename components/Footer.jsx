@@ -8,7 +8,7 @@ const Footer = () => (
     borderTop="1px"
     borderColor="gray.100"
   >
-    © 2022 Room booking, Inc.
+    © 2022 Desirable Home, Inc.
   </Box>
 );
 

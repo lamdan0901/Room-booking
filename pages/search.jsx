@@ -30,16 +30,20 @@ const Search = ({ properties = [] }) => {
         <Text>Search Property By Filters</Text>
         <Icon paddingLeft="2" w="7" as={BsFilter} />
       </Flex>
+
       {searchFilters && <SearchFilters />}
+
       <Text fontSize="2xl" p="4" fontWeight="bold">
         Properties {router.query.purpose}
         {/* ex: /search?purpose=for-sale -> router.query.purpose == for-sale */}
       </Text>
-      <Flex flexWrap="wrap">
+
+      <Flex flexWrap="wrap" justifyContent="center">
         {properties.map((property) => (
           <Property property={property} key={property.id} />
         ))}
       </Flex>
+
       {properties.length === 0 && (
         <Flex
           justifyContent="center"
