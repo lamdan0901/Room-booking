@@ -36,7 +36,7 @@ const RightArrow = () => {
   );
 };
 
-const ImageScrollBar = ({ data }) => (
+export const ImageScrollBar = ({ data }) => (
   <ScrollMenu
     LeftArrow={LeftArrow}
     RightArrow={RightArrow}
@@ -57,4 +57,4 @@ const ImageScrollBar = ({ data }) => (
   </ScrollMenu>
 );
 
-export default ImageScrollBar;
+// export default ImageScrollBar;
